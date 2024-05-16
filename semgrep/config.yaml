@@ -50,9 +50,7 @@ rules:
   - id: cve-2024-4142
     patterns:
       - pattern: |
-          $...X jfrog rt
-      - pattern: |
-          $X jfrt
+          $...X jfrog rt...--api-token
     languages:
       - generic
     message: >
