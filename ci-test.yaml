@@ -1,3 +1,4 @@
 script: |
-  jfrog -rt
+  jfrog -rt upload foo:bar --api-key
   bar
+  jfrt
