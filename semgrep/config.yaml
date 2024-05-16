@@ -60,8 +60,3 @@ rules:
     metadata:
       references:
         - https://jfrog.com/help/r/jfrog-release-information/cve-2024-4142-improper-input-validation-in-artifactory-token-creation-flow
-        category: security
-        technology:
-          - Artifactory
-          - JFrog-cli
-        confidence: HIGH
