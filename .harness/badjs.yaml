@@ -26,37 +26,38 @@ pipeline:
             spec: {}
           execution:
             steps:
-              - step:
-                  type: Semgrep
-                  spec:
-                    mode: orchestration
-                    config: default
-                    target:
-                      type: repository
-                      workspace: ./
-                      detection: auto
-                    advanced:
-                      log:
-                        level: info
-                      fail_on_severity: high
-                  name: semgrep oss
-                  identifier: semgrep_oss
-              - step:
-                  type: Semgrep
-                  name: Semgrep_custom_ruleset
-                  identifier: Semgrep_1
-                  spec:
-                    mode: orchestration
-                    config: default
-                    target:
-                      type: repository
-                      workspace: ./
-                      detection: auto
-                    advanced:
-                      log:
-                        level: info
-                      fail_on_severity: high
-                      args:
-                        cli: "--config ./semgrep/config.yaml"
-                  when:
-                    stageStatus: All
+              - parallel:
+                  - step:
+                      type: Semgrep
+                      name: Semgrep_custom_ruleset
+                      identifier: Semgrep_1
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: repository
+                          workspace: ./
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                          fail_on_severity: high
+                          args:
+                            cli: "--config ./semgrep/config.yaml"
+                      when:
+                        stageStatus: Success
+                  - step:
+                      type: Semgrep
+                      spec:
+                        mode: orchestration
+                        config: default
+                        target:
+                          type: repository
+                          workspace: ./
+                          detection: auto
+                        advanced:
+                          log:
+                            level: info
+                          fail_on_severity: high
+                      name: semgrep oss
+                      identifier: semgrep_oss
