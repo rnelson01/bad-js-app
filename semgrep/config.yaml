@@ -25,3 +25,25 @@ rules:
     severity: WARNING
     languages:
       - js
+  - id: find-unverified-transactions
+    patterns:
+      - pattern: |
+          public $RETURN $METHOD(...){
+              ...
+              make_transaction($T);
+              ...
+          }
+      - pattern-not: |
+          public $RETURN $METHOD(...){
+              ...
+              verify_transaction(...);
+              ...
+              make_transaction(...);
+              ...
+          }
+    message: >
+      In $METHOD, there's a call to make_transaction() without first calling
+      verify_transaction() on the Transaction object.
+    severity: WARNING
+    languages:
+      - java
