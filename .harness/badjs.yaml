@@ -28,7 +28,22 @@ pipeline:
             steps:
               - step:
                   type: Semgrep
-                  name: Semgrep_1
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      workspace: ./
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                      fail_on_severity: high
+                  name: semgrep oss
+                  identifier: semgrep_oss
+              - step:
+                  type: Semgrep
+                  name: Semgrep_custom_ruleset
                   identifier: Semgrep_1
                   spec:
                     mode: orchestration
