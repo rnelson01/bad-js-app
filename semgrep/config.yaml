@@ -50,9 +50,12 @@ rules:
   - id: cve-2024-4142
     patterns:
       - pattern: |
-          $...X = jfrog rt;
+          script:
+            ...
+            jfrog rt
+            ...
     languages:
-      - generic
+      - yaml
     message: >
       Jfrog cli api-tokens are deprecated, please use curl.
     severity: HIGH
