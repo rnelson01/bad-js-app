@@ -58,3 +58,5 @@ pipeline:
                       fail_on_severity: high
                       args:
                         cli: "--config ./semgrep/config.yaml"
+                  when:
+                    stageStatus: All
