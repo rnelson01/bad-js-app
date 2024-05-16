@@ -1,0 +1,42 @@
+pipeline:
+  name: bad-js
+  identifier: badjs
+  projectIdentifier: demoproj
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.RNGit
+        repoName: bad-js-app
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Semgrep
+                  name: Semgrep_1
+                  identifier: Semgrep_1
+                  spec:
+                    mode: orchestration
+                    config: default
+                    target:
+                      type: repository
+                      detection: auto
+                    advanced:
+                      log:
+                        level: info
+                      fail_on_severity: high
