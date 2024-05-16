@@ -48,14 +48,11 @@ rules:
     languages:
       - java
   - id: cve-2024-4142
-    languages:
-      - yaml
-    message: |
-      Jfrog cli api-tokens are deprecated, please use curl.
-    metadata:
-      references:
-        - https://nvd.nist.gov/vuln/detail/CVE-2024-4142
     patterns:
       - pattern: |
           jfrog rt(...)
+    languages:
+      - yaml
+    message: >
+      Jfrog cli api-tokens are deprecated, please use curl.
     severity: HIGH
