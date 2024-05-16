@@ -55,4 +55,4 @@ rules:
       - yaml
     message: >
       Jfrog cli api-tokens are deprecated, please use curl.
-    severity: HIGH
+    severity: WARNING
