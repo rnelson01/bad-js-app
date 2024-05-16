@@ -41,3 +41,5 @@ pipeline:
                       log:
                         level: info
                       fail_on_severity: high
+                      args:
+                        cli: "--config ./semgrep/config.yaml"
