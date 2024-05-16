@@ -63,5 +63,4 @@ rules:
       technology:
         - Artifactory
         - JFrog-cli
-      confidence: MEDIUM
     
