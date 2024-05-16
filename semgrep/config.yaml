@@ -54,7 +54,7 @@ rules:
           jfrog rt
           ...
     languages:
-      - yaml
+      - generic
     message: >
       Jfrog cli api-tokens are deprecated, please use curl.
     severity: HIGH
