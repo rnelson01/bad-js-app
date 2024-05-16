@@ -50,6 +50,7 @@ rules:
   - id: cve-2024-4142
     patterns:
       - pattern: |
+          ...
           jfrog rt
     languages:
       - yaml
