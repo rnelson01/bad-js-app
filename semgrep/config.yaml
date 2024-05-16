@@ -12,3 +12,16 @@ rules:
       - pattern: |
           {dangerouslySetInnerHTML: ...}
     severity: WARNING
+  - id: docs-react-dangerouslysetinnerhtml
+    patterns:
+      - pattern-either:
+          - pattern: |
+              <$X dangerouslySetInnerHTML=... />
+          - pattern: |
+              {dangerouslySetInnerHTML: ...}
+    message: >
+      Setting HTML from code is risky because it’s easy to inadvertently expose
+      your users to a cross-site scripting (XSS) attack.
+    severity: WARNING
+    languages:
+      - js
