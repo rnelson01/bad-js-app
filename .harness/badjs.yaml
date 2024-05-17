@@ -59,5 +59,7 @@ pipeline:
                           log:
                             level: info
                           fail_on_severity: high
+                        auth:
+                          access_token: <+secrets.getValue("account.semgrep")>
                       name: semgrep oss
                       identifier: semgrep_oss
