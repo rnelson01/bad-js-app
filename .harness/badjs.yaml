@@ -46,6 +46,9 @@ pipeline:
                             cli: "--config ./semgrep/config.yaml"
                         settings:
                           SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep_app")>
+                          SEMGREP_BRANCH: <+codebase.sourceBranch>
+                          SEMGREP_PR_ID: <+codebase.prNumber>
+                          SEMGREP_REPO_URL: <+codebase.repoUrl>
                       when:
                         stageStatus: Success
                   - step:
@@ -64,7 +67,7 @@ pipeline:
                         settings:
                           SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep_app")>
                           SEMGREP_BRANCH: <+codebase.sourceBranch>
-                          SEMGREP_PR_ID: "<+codebase.prNumber> "
+                          SEMGREP_PR_ID: <+codebase.prNumber>
                           SEMGREP_REPO_URL: <+codebase.repoUrl>
                       name: semgrep oss
                       identifier: semgrep_oss
