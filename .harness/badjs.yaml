@@ -73,6 +73,7 @@ pipeline:
                           SEMGREP_REPO_URL: <+codebase.repoUrl>
                           SEMGREP_COMMIT: <+codebase.commitSha>
                           SEMGREP_REPO_NAME: rnelson01/bad-js-app
+                          SEMGREP_USER_ID: <+secrets.getValue("account.semgrep_user")>
                         auth:
                           access_token: <+secrets.getValue("account.semgrep_app")>
                       name: semgrep oss
