@@ -62,7 +62,7 @@ pipeline:
                             level: info
                           fail_on_severity: high
                         settings:
-                          SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep")>
+                          SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep_app")>
                           SEMGREP_BRANCH: main
                       name: semgrep oss
                       identifier: semgrep_oss
