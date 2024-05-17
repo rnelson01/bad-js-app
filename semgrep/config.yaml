@@ -47,14 +47,14 @@ rules:
     severity: WARNING
     languages:
       - java
-  - id: cve-2024-4142
+  - id: jfrog_cli_api_tokens
     patterns:
       - pattern: |
           $...X jfrog rt...--api-token
     languages:
       - generic
     message: >
-      Jfrog cli api-tokens are deprecated, please use curl.
+      cve-2024-4142 Jfrog cli api-tokens are no longer available, please use curl for uploading/downloading artifacts from artifactory
     severity: ERROR
     metadata:
       references:
