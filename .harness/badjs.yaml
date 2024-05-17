@@ -44,8 +44,8 @@ pipeline:
                           fail_on_severity: high
                           args:
                             cli: "--config ./semgrep/config.yaml"
-                        auth:
-                          access_token: <+secrets.getValue("account.semgrep")>
+                        settings:
+                          SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep")>
                       when:
                         stageStatus: Success
                   - step:
