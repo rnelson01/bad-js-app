@@ -49,7 +49,7 @@ pipeline:
                           SEMGREP_BRANCH: <+codebase.sourceBranch>
                           SEMGREP_PR_ID: <+codebase.prNumber>
                           SEMGREP_REPO_URL: <+codebase.repoUrl>
-                          SEMGREP_REPO_NAME: bad-js-app
+                          SEMGREP_REPO_NAME: rnelson01/bad-js-app
                           SEMGREP_COMMIT: <+codebase.commitRef>
                       when:
                         stageStatus: Success
@@ -72,6 +72,6 @@ pipeline:
                           SEMGREP_PR_ID: <+codebase.prNumber>
                           SEMGREP_REPO_URL: <+codebase.repoUrl>
                           SEMGREP_COMMIT: <+codebase.commitRef>
-                          SEMGREP_REPO_NAME: bad-js-app
+                          SEMGREP_REPO_NAME: rnelson01/bad-js-app
                       name: semgrep oss
                       identifier: semgrep_oss
