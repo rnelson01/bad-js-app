@@ -70,5 +70,6 @@ pipeline:
                           SEMGREP_BRANCH: <+codebase.sourceBranch>
                           SEMGREP_PR_ID: <+codebase.prNumber>
                           SEMGREP_REPO_URL: <+codebase.repoUrl>
+                          SEMGREP_COMMIT: <+codebase.prNumber>
                       name: semgrep oss
                       identifier: semgrep_oss
