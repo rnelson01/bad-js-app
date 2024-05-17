@@ -45,12 +45,14 @@ pipeline:
                           args:
                             cli: "--config ./semgrep/config.yaml"
                         settings:
-                          SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep_app")>
+                          SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep")>
                           SEMGREP_BRANCH: <+codebase.sourceBranch>
                           SEMGREP_PR_ID: <+codebase.prNumber>
                           SEMGREP_REPO_URL: <+codebase.repoUrl>
                           SEMGREP_REPO_NAME: rnelson01/bad-js-app
                           SEMGREP_COMMIT: <+codebase.commitRef>
+                        auth:
+                          access_token: <+secrets.getValue("account.semgrep")>
                       when:
                         stageStatus: Success
                   - step:
