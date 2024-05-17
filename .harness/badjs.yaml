@@ -71,7 +71,7 @@ pipeline:
                           SEMGREP_BRANCH: <+codebase.sourceBranch>
                           SEMGREP_PR_ID: <+codebase.prNumber>
                           SEMGREP_REPO_URL: <+codebase.repoUrl>
-                          SEMGREP_COMMIT: <+codebase.commitRef>
+                          SEMGREP_COMMIT: <+codebase.commitSha>
                           SEMGREP_REPO_NAME: rnelson01/bad-js-app
                         auth:
                           access_token: <+secrets.getValue("account.semgrep_app")>
