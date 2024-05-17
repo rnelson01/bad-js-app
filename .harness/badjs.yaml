@@ -45,7 +45,7 @@ pipeline:
                           args:
                             cli: "--config ./semgrep/config.yaml"
                         settings:
-                          SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep")>
+                          SEMGREP_APP_TOKEN: <+secrets.getValue("account.semgrep_app")>
                       when:
                         stageStatus: Success
                   - step:
