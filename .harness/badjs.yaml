@@ -36,7 +36,7 @@ pipeline:
                     shell: Bash
                     command: semgrep ci
                     envVariables:
-                      SEMGREP_APP_TOKEN: " <+secrets.getValue(\"account.semgrep\")>"
+                      SEMGREP_APP_TOKEN: " <+secrets.getValue(\"account.semgrep_app\")>"
                       SEMGREP_BRANCH: <+codebase.sourceBranch>
                       SEMGREP_PR_ID: <+codebase.prNumber>
                       SEMGREP_REPO_URL: <+codebase.repoUrl>
