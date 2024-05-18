@@ -36,7 +36,12 @@ pipeline:
                     shell: Bash
                     command: semgrep ci
                     envVariables:
-                      semgrep_api: ""
+                      SEMGREP_API_TOKEN: " "
+                      SEMGREP_BRANCH: <+codebase.sourceBranch>
+                      SEMGREP_PR_ID: <+codebase.prNumber>
+                      SEMGREP_REPO_URL: <+codebase.repoUrl>
+                      SEMGREP_REPO_NAME: rnelson01/bad-js-app
+                      SEMGREP_COMMIT: <+codebase.commitRef>
                     imagePullPolicy: IfNotPresent
               - parallel:
                   - step:
