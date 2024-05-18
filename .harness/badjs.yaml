@@ -51,7 +51,7 @@ pipeline:
                           SEMGREP_REPO_NAME: rnelson01/bad-js-app
                           SEMGREP_COMMIT: <+codebase.commitRef>
                         auth:
-                          access_token: <+secrets.getValue("account.semgrep")>
+                          access_token: <+secrets.getValue("account.semgrep_app")>
                       when:
                         stageStatus: Success
                   - step:
@@ -75,6 +75,6 @@ pipeline:
                           SEMGREP_REPO_NAME: rnelson01/bad-js-app
                           SEMGREP_USER_ID: <+secrets.getValue("account.semgrep_user")>
                         auth:
-                          access_token: <+secrets.getValue("account.semgrep")>
+                          access_token: <+secrets.getValue("account.semgrep_app")>
                       name: semgrep oss
                       identifier: semgrep_oss
