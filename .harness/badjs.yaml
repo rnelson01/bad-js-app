@@ -40,7 +40,7 @@ pipeline:
                           detection: auto
                         advanced:
                           log:
-                            level: info
+                            level: debug
                           fail_on_severity: high
                           args:
                             cli: "--config ./semgrep/config.yaml"
