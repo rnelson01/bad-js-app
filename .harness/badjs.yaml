@@ -35,6 +35,8 @@ pipeline:
                     image: semgrep/semgrep
                     shell: Bash
                     command: semgrep ci
+                    envVariables:
+                      semgrep_api: ""
                     imagePullPolicy: IfNotPresent
               - parallel:
                   - step:
