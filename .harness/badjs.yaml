@@ -41,7 +41,7 @@ pipeline:
                       SEMGREP_PR_ID: <+codebase.prNumber>
                       SEMGREP_REPO_URL: <+codebase.repoUrl>
                       SEMGREP_REPO_NAME: rnelson01/bad-js-app
-                      SEMGREP_COMMIT: <+codebase.baseCommitSha>
+                      SEMGREP_COMMIT: <+codebase.commitSha>
                     imagePullPolicy: IfNotPresent
               - parallel:
                   - step:
