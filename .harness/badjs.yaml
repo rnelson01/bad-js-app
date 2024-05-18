@@ -26,6 +26,16 @@ pipeline:
             spec: {}
           execution:
             steps:
+              - step:
+                  type: Run
+                  name: semgrep_container
+                  identifier: semgrep_container
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: semgrep/semgrep
+                    shell: Bash
+                    command: semgrep ci
+                    imagePullPolicy: IfNotPresent
               - parallel:
                   - step:
                       type: Semgrep
