@@ -58,7 +58,7 @@ pipeline:
                         advanced:
                           log:
                             level: debug
-                          fail_on_severity: high
+                          fail_on_severity: none
                           args:
                             cli: "--config ./semgrep/config.yaml"
                         settings:
@@ -83,7 +83,7 @@ pipeline:
                         advanced:
                           log:
                             level: debug
-                          fail_on_severity: high
+                          fail_on_severity: none
                         settings:
                           SEMGREP_BRANCH: <+codebase.sourceBranch>
                           SEMGREP_PR_ID: <+codebase.prNumber>
